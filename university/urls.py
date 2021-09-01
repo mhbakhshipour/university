@@ -14,8 +14,21 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
+from django.contrib.staticfiles.urls import static, staticfiles_urlpatterns
+from django.conf import settings
+
+from blog.urls import blogview_urlpatterns
+from teacher.urls import teacherview_urlpatterns
+from core.urls import coreview_urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('blog/', include(blogview_urlpatterns)),
+    path('teacher/', include(teacherview_urlpatterns)),
+    path('', include(coreview_urlpatterns)),
+
 ]
+
+urlpatterns += staticfiles_urlpatterns()
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

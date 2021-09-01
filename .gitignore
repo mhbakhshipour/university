@@ -35,9 +35,6 @@ nosetests.xml
 googlemaps.egg-info
 *.egg
 
-.sqlite3
-*.sqlite3
-*.sqlite3_dev
 *.csv
 *.log
 *.zip
@@ -68,10 +65,6 @@ pkg/
 !panel/**/media
 !panel/**/*.zip
 !static/**
-
-# static files
-templates/*
-!templates/*.html
 
 # yarn
 panel/.yarn/*
