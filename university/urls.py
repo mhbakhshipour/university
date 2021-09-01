@@ -24,6 +24,7 @@ from core.urls import coreview_urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
     path('blog/', include(blogview_urlpatterns)),
     path('teacher/', include(teacherview_urlpatterns)),
     path('', include(coreview_urlpatterns)),
