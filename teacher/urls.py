@@ -4,5 +4,5 @@ from teacher import views
 
 teacherview_urlpatterns = [
     path('list', views.TeacherList, name="list"),
-    # path('<int:teacher_id>', views.TeacherDetail, name="detail"),
+    path('<int:teacher_id>', views.TeacherDetail, name="detail"),
 ]

@@ -10,3 +10,13 @@ def BlogList(request: HttpRequest):
     context = {"blogs": blogs}
     template = "blog-list.html"
     return render(request, template, context)
+
+
+@require_http_methods(['GET'])
+def BlogDetail(request, blog_id):
+    if Blog.objects.filter(pk=blog_id).exists():
+        context = {'blog': Blog.objects.get(pk=blog_id)}
+        template = "blog-detail.html"
+        return render(request, template, context)
+    else:
+        return render(request, '404.html')

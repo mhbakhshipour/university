@@ -10,3 +10,12 @@ def TeacherList(request: HttpRequest):
     context = {"teachers": teachers}
     template = "teacher-list.html"
     return render(request, template, context)
+
+@require_http_methods(['GET'])
+def TeacherDetail(request, teacher_id):
+    if Teacher.objects.filter(pk=teacher_id).exists():
+        context = {'teacher': Teacher.objects.get(pk=teacher_id)}
+        template = "teacher-detail.html"
+        return render(request, template, context)
+    else:
+        return render(request, '404.html')
