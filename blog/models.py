@@ -9,6 +9,7 @@ class Blog(models.Model):
     description = models.TextField(null=True, blank=True)
     is_public = models.BooleanField(default=False)
     content = RichTextField()
+    created_at = models.DateField(auto_now=True)
     
     def __str__(self) -> str:
         return self.title
