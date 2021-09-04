@@ -8,68 +8,57 @@
           <div class="col-lg-8 col-md-10 text-center">
             <!-- Section Title START -->
             <div class="section-title">
-              <h2>Meet Our Team</h2>
-              <p>Meet the outstanding performers in our industry-award-winning team of professionals</p>
+              <h2>اساتید</h2>
             </div>
             <!-- Section Title END -->
           </div>
         </div>
         <div class="row">
+        {%for teacher in teachers%}
           <div class="col-lg-4 col-md-4 col-sm-6 mb-4 mb-md-0">
             <!-- team-01 START -->
             <div class="team">
               <div class="team-img">
-                <img class="img-fluid" src="/templates/img/01(4).jpg" alt="">
+                <img class="img-fluid" src="{%if teacher.avatar%}{{teacher.avatar.url}}{%endif%}" alt="" />
               </div>
               <div class="team-info">
-                <a href="http://themes.potenzaglobalsolutions.com/html/academic/teachers-single.html" class="team-name">Mellissa Doe</a>
-                <p class="team-leader">Team Leader</p>
-                <ul class="list-unstyled">
-                  <li><a href="http://themes.potenzaglobalsolutions.com/html/academic/#"><i class="fab fa-facebook-f"></i></a></li>
-                  <li><a href="http://themes.potenzaglobalsolutions.com/html/academic/#"><i class="fab fa-twitter"></i></a></li>
-                  <li><a href="http://themes.potenzaglobalsolutions.com/html/academic/#"><i class="fab fa-linkedin-in"></i></a></li>
-                  <li><a href="http://themes.potenzaglobalsolutions.com/html/academic/#"><i class="fab fa-instagram"></i></a></li>
-                </ul>
+                <a
+                  href="/teacher/{{teacher.id}}"
+                  class="team-name"
+                  >{{teacher.full_name}}</a
+                >
+                <p class="team-leader">{{teacher.description}}</p>
+                {% comment %} <ul class="list-unstyled">
+                  <li>
+                    <a
+                      href="http://themes.potenzaglobalsolutions.com/html/academic/#"
+                      ><i class="fab fa-facebook-f"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a
+                      href="http://themes.potenzaglobalsolutions.com/html/academic/#"
+                      ><i class="fab fa-twitter"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a
+                      href="http://themes.potenzaglobalsolutions.com/html/academic/#"
+                      ><i class="fab fa-linkedin-in"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a
+                      href="http://themes.potenzaglobalsolutions.com/html/academic/#"
+                      ><i class="fab fa-instagram"></i
+                    ></a>
+                  </li>
+                </ul> {% endcomment %}
               </div>
             </div>
             <!-- team-01 END -->
           </div>
-          <div class="col-lg-4 col-md-4 col-sm-6 mb-4 mb-md-0">
-            <!-- team-01 START -->
-            <div class="team">
-                <img class="img-fluid" src="/templates/img/02(4).jpg" alt="">
-              <div class="team-info">
-                <a href="http://themes.potenzaglobalsolutions.com/html/academic/teachers-single.html" class="team-name">Ora Bryan</a>
-                <p class="team-leader">Illustration</p>
-                <ul class="list-unstyled">
-                  <li><a href="http://themes.potenzaglobalsolutions.com/html/academic/#"><i class="fab fa-facebook-f"></i></a></li>
-                  <li><a href="http://themes.potenzaglobalsolutions.com/html/academic/#"><i class="fab fa-twitter"></i></a></li>
-                  <li><a href="http://themes.potenzaglobalsolutions.com/html/academic/#"><i class="fab fa-linkedin-in"></i></a></li>
-                  <li><a href="http://themes.potenzaglobalsolutions.com/html/academic/#"><i class="fab fa-instagram"></i></a></li>
-                </ul>
-              </div>
-            </div>
-            <!-- team-01 END -->
-          </div>
-          <div class="col-lg-4 col-md-4 col-sm-6">
-            <!-- team-01 START -->
-            <div class="team">
-              <div class="team-img">
-                <img class="img-fluid" src="/templates/img/03(4).jpg" alt="">
-              </div>
-              <div class="team-info">
-                <a href="http://themes.potenzaglobalsolutions.com/html/academic/teachers-single.html" class="team-name">Gwen Bass</a>
-                <p class="team-leader">Sales and Marketing</p>
-                <ul class="list-unstyled">
-                  <li><a href="http://themes.potenzaglobalsolutions.com/html/academic/#"><i class="fab fa-facebook-f"></i></a></li>
-                  <li><a href="http://themes.potenzaglobalsolutions.com/html/academic/#"><i class="fab fa-twitter"></i></a></li>
-                  <li><a href="http://themes.potenzaglobalsolutions.com/html/academic/#"><i class="fab fa-linkedin-in"></i></a></li>
-                  <li><a href="http://themes.potenzaglobalsolutions.com/html/academic/#"><i class="fab fa-instagram"></i></a></li>
-                </ul>
-              </div>
-            </div>
-            <!-- team-01 END -->
-          </div>
+        {%endfor%}
         </div>
       </div>
     </section>
