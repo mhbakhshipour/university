@@ -23,3 +23,9 @@ def Form(request: HttpRequest):
     context = {"forms": forms}
     template = "forms.html"
     return render(request, template, context)
+
+@require_http_methods(["GET"])
+def ContactUs(request: HttpRequest):
+    context = {}
+    template = "contact-us.html"
+    return render(request, template, context)
