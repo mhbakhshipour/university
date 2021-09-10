@@ -4,3 +4,4 @@ RUN mkdir /univercity
 WORKDIR /univercity
 COPY requirements.txt /univercity/
 RUN pip install -r requirements.txt
+COPY . /univercity/
