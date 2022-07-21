@@ -1,15 +1,12 @@
 version: '3'
 
-networks:
-  univercity:
-    driver: bridge
-
 services:
   backend:
+    container_name: university
     build: .
     restart: always
     ports:
-      - '8989:8000'
+      - '8002:8000'
     command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
-    networks:
-      - univercity
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
